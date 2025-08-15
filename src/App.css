@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Custom utility classes */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Color Palette System - Enhanced with CSS Variables */
+:root {
+  /* Default color variables - will be overridden by JavaScript */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #1e40af;
+  --color-accent: #1e3a8a;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+/* Apply color palette to entire website using CSS variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure theme classes are applied correctly */
+html.light,
+body.light {
+  color-scheme: light;
+}
+
+html.dark,
+body.dark {
+  color-scheme: dark;
+}
+
+/* Prevent flash of unstyled content */
+html {
+  background-color: #ffffff;
+}
+
+html.dark {
+  background-color: #0f172a;
+}
+
+/* Update primary buttons and links to use CSS variables */
+.bg-blue-600, .bg-blue-500 {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-blue-700 {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.text-blue-600, .text-blue-500 {
+  color: var(--color-primary) !important;
+}
+
+.text-blue-700 {
+  color: var(--color-primary-dark) !important;
+}
+
+.border-blue-500, .border-blue-600 {
+  border-color: var(--color-primary) !important;
+}
+
+.ring-blue-500 {
+  --tw-ring-color: var(--color-primary) !important;
+}
+
+/* Update hover states */
+.hover\:bg-blue-700:hover {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.hover\:text-blue-800:hover {
+  color: var(--color-secondary) !important;
+}
+
+/* Update focus states */
+.focus\:ring-blue-500:focus {
+  --tw-ring-color: var(--color-primary) !important;
+}
+
+.focus\:border-blue-500:focus {
+  border-color: var(--color-primary) !important;
+}
+
+/* Color palette specific styles - Enhanced */
+.palette-default {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #1e40af;
+  --color-accent: #1e3a8a;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-emerald-green {
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
+  --color-secondary: #047857;
+  --color-accent: #065f46;
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #dcfce7;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-violet-indigo {
+  --color-primary: #8b5cf6;
+  --color-primary-dark: #7c3aed;
+  --color-secondary: #6d28d9;
+  --color-accent: #5b21b6;
+  --bg-primary: #faf5ff;
+  --bg-secondary: #f3e8ff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-rose-magenta {
+  --color-primary: #f43f5e;
+  --color-primary-dark: #e11d48;
+  --color-secondary: #be123c;
+  --color-accent: #9f1239;
+  --bg-primary: #fff1f2;
+  --bg-secondary: #ffe4e6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-amber-caramel {
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
+  --color-secondary: #b45309;
+  --color-accent: #92400e;
+  --bg-primary: #fffbeb;
+  --bg-secondary: #fef3c7;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-cool-cyan {
+  --color-primary: #06b6d4;
+  --color-primary-dark: #0891b2;
+  --color-secondary: #0e7490;
+  --color-accent: #155e75;
+  --bg-primary: #f0fdfa;
+  --bg-secondary: #ccfbf1;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-copper-brown {
+  --color-primary: #b45309;
+  --color-primary-dark: #92400e;
+  --color-secondary: #78350f;
+  --color-accent: #451a03;
+  --bg-primary: #fefbf3;
+  --bg-secondary: #fef3c7;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-mint-lime {
+  --color-primary: #84cc16;
+  --color-primary-dark: #65a30d;
+  --color-secondary: #4d7c0f;
+  --color-accent: #365314;
+  --bg-primary: #f7fee7;
+  --bg-secondary: #ecfccb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-sky-blue {
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0284c7;
+  --color-secondary: #0369a1;
+  --color-accent: #075985;
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-charcoal-orange {
+  --color-primary: #ea580c;
+  --color-primary-dark: #c2410c;
+  --color-secondary: #9a3412;
+  --color-accent: #7c2d12;
+  --bg-primary: #fafafa;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-platinum-aqua {
+  --color-primary: #06b6d4;
+  --color-primary-dark: #0891b2;
+  --color-secondary: #0e7490;
+  --color-accent: #155e75;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+.palette-ruby-gold {
+  --color-primary: #dc2626;
+  --color-primary-dark: #b91c1c;
+  --color-secondary: #991b1b;
+  --color-accent: #7f1d1d;
+  --bg-primary: #fef2f2;
+  --bg-secondary: #fee2e2;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+/* Ensure all palette classes apply their variables immediately */
+body.palette-default,
+body.palette-emerald-green,
+body.palette-violet-indigo,
+body.palette-rose-magenta,
+body.palette-amber-caramel,
+body.palette-cool-cyan,
+body.palette-copper-brown,
+body.palette-mint-lime,
+body.palette-sky-blue,
+body.palette-charcoal-orange,
+body.palette-platinum-aqua,
+body.palette-ruby-gold {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Apply to common background classes */
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-slate-50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Ensure text colors use variables */
+.text-slate-900 {
+  color: var(--text-primary) !important;
+}
+
+.text-slate-600 {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark mode support for color palettes */
+.dark .palette-default,
+.dark .palette-emerald-green,
+.dark .palette-violet-indigo,
+.dark .palette-rose-magenta,
+.dark .palette-amber-caramel,
+.dark .palette-cool-cyan,
+.dark .palette-copper-brown,
+.dark .palette-mint-lime,
+.dark .palette-sky-blue,
+.dark .palette-charcoal-orange,
+.dark .palette-platinum-aqua,
+.dark .palette-ruby-gold {
+  --bg-primary: #1e293b;
+  --bg-secondary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+}
+
+/* Ensure smooth transitions between themes */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
