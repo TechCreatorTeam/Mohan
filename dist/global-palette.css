@@ -1,0 +1,11 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #222222;
+  --text-secondary: #666666;
+  /* Add more palette variables as needed */
+}
+
+body.palette-default {
+  /* Optionally add palette-specific overrides */
+}
